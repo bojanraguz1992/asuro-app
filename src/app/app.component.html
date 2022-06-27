@@ -1,0 +1,97 @@
+<app-header></app-header>
+<ng-container
+	*ngIf="{
+		conversionRate: conversionRate$ | async,
+		symbols: symbols$ | async,
+		convertedAmount: convertedAmount$ | async
+	} as vm"
+>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 m-b-300">
+				<h1 class="text text-color-100 m-b-50" i18n>
+					Currency Converter
+				</h1>
+				<h4 class="text text-color-200 text-weight-normal">
+					<span i18n>Today</span>, {{ time | date: datePipeFormat }}
+				</h4>
+			</div>
+		</div>
+		<form [formGroup]="currencyForm" (ngSubmit)="convert()">
+			<div class="converter">
+				<div class="converter__input">
+					<div class="m-r-150">
+						<input
+							type="text"
+							class="input"
+							name="fromAmount"
+							formControlName="amount"
+							(keypress)="numberOnly($event)"
+						/>
+					</div>
+					<div>
+						<select
+							name="from"
+							id="from"
+							formControlName="fromCurrency"
+						>
+							<option value="" selected disabled i18n>
+								Select currency
+							</option>
+							<option
+								*ngFor="let rate of vm.symbols | keyvalue"
+								[value]="rate.key"
+							>
+								{{ rate.key }} - {{ rate.value }}
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="converter__input m-t-300">
+					<div class="m-r-150">
+						<input
+							type="text"
+							readonly
+							class="input"
+							[value]="vm.convertedAmount | number: '3.1-2'"
+						/>
+					</div>
+					<select name="to" id="to" formControlName="toCurrency">
+						<option value="" disabled selected i18n>
+							Select currency
+						</option>
+						<option
+							*ngFor="let rate of vm.symbols | keyvalue"
+							[value]="rate.key"
+						>
+							{{ rate.key }} - {{ rate.value }}
+						</option>
+					</select>
+				</div>
+			</div>
+			<button
+				type="submit"
+				class="button button-primary button-full-width m-t-300"
+				[disabled]="currencyForm.invalid"
+				i18n
+			>
+				Convert
+			</button>
+		</form>
+
+		<ng-container *ngIf="vm.convertedAmount">
+			<div class="row">
+				<div class="col-12 m-t-300">
+					<h3 class="text text-color-100">
+						{{ amount?.value }} {{ fromCurrency?.value }}
+						<span i18n> equals </span>
+					</h3>
+					<p class="text text-color-200">
+						{{ vm.convertedAmount | number: '3.1-2' }}
+						{{ toCurrency?.value }}
+					</p>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+</ng-container>

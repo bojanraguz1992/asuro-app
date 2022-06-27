@@ -1,0 +1,43 @@
+.button {
+    
+    &-primary {
+        background-color: var(--color-primary);
+        border:none;
+        color: var(--color-white);
+        padding: 10px 15px;
+        font-weight: bold;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        background-color: var(--color-background);
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &-full-width {
+        width: 100%;
+    }
+    &-size {
+        &__medium {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                path {
+                    fill: var(--color-white);
+                }
+            }
+        }
+    }
+    &-round {
+        border-radius: 50%;
+    }
+}

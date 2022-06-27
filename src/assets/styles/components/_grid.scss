@@ -1,0 +1,76 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.grid {
+    &__center {
+        align-items: center;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: var(--container-width);
+    padding: 0 var(--gutter);
+
+    @media(min-width: var(--container-width)) {
+        padding: 0;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-.5 * var(--gutter));
+    margin-left: calc(-.5 * var(--gutter));
+    >* {
+        padding-right: calc(.5 * var(--gutter));
+        padding-left: calc(.5 * var(--gutter));
+    }
+}
+
+.col {
+    &-1 {
+        flex: 1
+    }
+    &-12{
+        width: 100%;
+    }
+}
+
+.m {
+    &-b {
+        &-50{
+            margin-bottom: calc(0.5 * var(--gutter));
+        }
+        &-150{
+            margin-bottom: calc(1.5 * var(--gutter));
+        }
+        &-300{
+            margin-bottom: calc(3 * var(--gutter));
+        }
+    }
+
+    &-t {
+        &-50{
+            margin-top: calc(0.5 * var(--gutter));
+        }
+        &-150{
+            margin-top: calc(1.5 * var(--gutter));
+        }
+        &-300{
+            margin-top: calc(3 * var(--gutter));
+        }
+    }
+
+    &-l {
+        &-150 {
+            margin-left:  calc(1.5 * var(--gutter));
+        }
+    }
+    &-r {
+        &-150 {
+            margin-right:  calc(1.5 * var(--gutter));
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.header{
+    padding: calc(2 * var(--gutter)) 0;
+    border-bottom: 2px solid var(--color-300);
+
+    &--logo {
+        &-image{
+            max-height: 50px;
+        }
+    }
+}

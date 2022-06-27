@@ -1,0 +1,19 @@
+// abstracts
+@import "./abstracts/colors";
+
+// components
+@import "./components/typography";
+@import "./components/grid";
+@import "./components/header";
+@import "./components/input";
+@import "./components/button";
+
+// layout
+@import "./layout/home";
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 1rem;
+}

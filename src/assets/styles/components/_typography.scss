@@ -1,0 +1,22 @@
+.text {
+    margin: 0;
+    
+    &-color {
+        &-100{
+            color: var(--color-100);
+        }
+        &-200{
+            color: var(--color-200);
+        }
+    }
+
+    &-weight {
+        &-normal{
+            font-weight: 400;
+        }
+
+        &-bold {
+            font-weight: bold;
+        }
+    }
+}

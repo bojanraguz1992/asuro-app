@@ -1,0 +1,18 @@
+:root {
+
+    --color-primary: rgb(0, 90, 130);
+    --color-secondary: #6daedb;
+    --color-background: #738290;
+    --color-white: #fff;
+
+    --color-100: #424141;
+    --color-200: #6f6f6f;
+    --color-300: #eee;
+    --color-400: #9d9d9d;
+    --font-primary: 'Roboto Condensed', sans-serif;
+
+    --gutter: 1rem;
+    --container-width: 640px;
+}
+
+@import "assets/styles/index";
