@@ -9,11 +9,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 m-b-300">
-				<h1 class="text text-color-100 m-b-50" i18n>
-					Currency Converter
+				<h1 class="text text-color-100 m-b-50">
+					{{ 'TITLE' | translate }}
 				</h1>
 				<h4 class="text text-color-200 text-weight-normal">
-					<span i18n>Today</span>, {{ time | date: datePipeFormat }}
+					{{ 'TODAY' | translate }}, {{ time | date: datePipeFormat }}
 				</h4>
 			</div>
 		</div>
@@ -35,8 +35,8 @@
 							id="from"
 							formControlName="fromCurrency"
 						>
-							<option value="" selected disabled i18n>
-								Select currency
+							<option value="" selected disabled>
+								{{ 'SELECT_CURRENCY' | translate }}
 							</option>
 							<option
 								*ngFor="let rate of vm.symbols | keyvalue"
@@ -57,8 +57,8 @@
 						/>
 					</div>
 					<select name="to" id="to" formControlName="toCurrency">
-						<option value="" disabled selected i18n>
-							Select currency
+						<option value="" disabled selected>
+							{{ 'SELECT_CURRENCY' | translate }}
 						</option>
 						<option
 							*ngFor="let rate of vm.symbols | keyvalue"
@@ -73,9 +73,8 @@
 				type="submit"
 				class="button button-primary button-full-width m-t-300"
 				[disabled]="currencyForm.invalid"
-				i18n
 			>
-				Convert
+				{{ 'CONVERT' | translate }}
 			</button>
 		</form>
 
@@ -84,7 +83,7 @@
 				<div class="col-12 m-t-300">
 					<h3 class="text text-color-100">
 						{{ amount?.value }} {{ fromCurrency?.value }}
-						<span i18n> equals </span>
+						{{ 'EQUALS' | translate }}
 					</h3>
 					<p class="text text-color-200">
 						{{ vm.convertedAmount | number: '3.1-2' }}

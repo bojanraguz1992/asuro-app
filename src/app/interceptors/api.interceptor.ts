@@ -17,6 +17,12 @@ export class ApiInterceptor implements HttpInterceptor {
 		const newReq = request.clone({
 			headers: request.headers.set('apikey', apiKey)
 		});
-		return next.handle(newReq);
+
+		// add apikey header only to the actual API request
+		if (request.url.includes('api.apilayer.com')) {
+			return next.handle(newReq);
+		}
+
+		return next.handle(request);
 	}
 }

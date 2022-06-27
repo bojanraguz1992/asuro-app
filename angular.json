@@ -4,15 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "asuro-app": {
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "de": {
-            "translation": "src/locale/messages.de.xlf",
-            "baseHref": ""
-          }
-        }
-      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -73,11 +64,6 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "de": {
-              "localize": ["de"],
-              "outputPath": "dist/asuro-app-de/",
-              "i18nMissingTranslation": "error"
             }
           },
           "defaultConfiguration": "production"
@@ -90,12 +76,6 @@
             },
             "development": {
               "browserTarget": "asuro-app:build:development"
-            },
-            "en": {
-              "browserTarget": "asuro-app:build:en"
-            },
-            "de": {
-              "browserTarget": "asuro-app:build:de"
             }
           },
           "defaultConfiguration": "development"
