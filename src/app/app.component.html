@@ -45,6 +45,15 @@
 								{{ rate.key }} - {{ rate.value }}
 							</option>
 						</select>
+						<p
+							class="text text-warning"
+							*ngIf="
+								fromCurrency?.invalid &&
+								(fromCurrency?.dirty || fromCurrency?.touched)
+							"
+						>
+							{{ 'SELECT_WARNING' | translate }}
+						</p>
 					</div>
 				</div>
 				<div class="converter__input m-t-300">
@@ -56,17 +65,28 @@
 							[value]="vm.convertedAmount | number: '3.1-2'"
 						/>
 					</div>
-					<select name="to" id="to" formControlName="toCurrency">
-						<option value="" disabled selected>
-							{{ 'SELECT_CURRENCY' | translate }}
-						</option>
-						<option
-							*ngFor="let rate of vm.symbols | keyvalue"
-							[value]="rate.key"
+					<div>
+						<select name="to" id="to" formControlName="toCurrency">
+							<option value="" disabled selected>
+								{{ 'SELECT_CURRENCY' | translate }}
+							</option>
+							<option
+								*ngFor="let rate of vm.symbols | keyvalue"
+								[value]="rate.key"
+							>
+								{{ rate.key }} - {{ rate.value }}
+							</option>
+						</select>
+						<p
+							class="text text-warning"
+							*ngIf="
+								toCurrency?.invalid &&
+								(toCurrency?.dirty || toCurrency?.touched)
+							"
 						>
-							{{ rate.key }} - {{ rate.value }}
-						</option>
-					</select>
+							{{ 'SELECT_WARNING' | translate }}
+						</p>
+					</div>
 				</div>
 			</div>
 			<button

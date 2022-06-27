@@ -3,5 +3,6 @@
     "TODAY": "Today",
     "SELECT_CURRENCY": "Select currency",
     "CONVERT": "Convert",
-    "EQUALS": "equals"
+    "EQUALS": "equals",
+    "SELECT_WARNING": "Please select a value"
 }

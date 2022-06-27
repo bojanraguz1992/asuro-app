@@ -9,6 +9,11 @@
             color: var(--color-200);
         }
     }
+    
+    &-warning {
+        margin: 10px;
+        color: var(--color-warning);
+    }
 
     &-weight {
         &-normal{

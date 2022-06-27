@@ -3,5 +3,6 @@
     "TODAY": "Heute",
     "SELECT_CURRENCY": "Währung auswählen",
     "CONVERT": "Konvertieren",
-    "EQUALS": "ist gleich"
+    "EQUALS": "ist gleich",
+    "SELECT_WARNING": "Bitte wählen Sie einen Wert"
 }
